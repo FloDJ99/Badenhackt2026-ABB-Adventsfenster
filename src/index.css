@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-abb-red: #f4f4f4;
+  --color-abb-dark: #1a1a1a;
+  --color-abb-light: #f4f4f4;
+}
+
+body {
+  background-color: var(--color-abb-light);
+  color: var(--color-abb-dark);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10vh) translateX(0);
+  }
+  100% {
+    transform: translateY(110vh) translateX(20px);
+  }
+}
+
+.snowflake {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: snowfall linear infinite;
+}
+
+@keyframes fly-sleigh {
+  0% {
+    transform: translateX(100vw) translateY(30vh) rotate(5deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  15% {
+    transform: translateX(60vw) translateY(10vh) rotate(-5deg);
+  }
+  25% {
+    transform: translateX(30vw) translateY(35vh) rotate(5deg);
+  }
+  35% {
+    transform: translateX(0vw) translateY(15vh) rotate(-5deg);
+  }
+  45% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50vw) translateY(30vh) rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50vw) translateY(30vh) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+.sleigh-animation {
+  position: fixed;
+  top: 10%;
+  left: 0;
+  pointer-events: none;
+  z-index: 5;
+  animation: fly-sleigh 20s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+@keyframes gallop {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+.reindeer {
+  display: inline-block;
+  animation: gallop 0.8s infinite ease-in-out;
+}
