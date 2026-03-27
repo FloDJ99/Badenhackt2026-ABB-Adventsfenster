@@ -4,13 +4,15 @@ import { X, Star } from 'lucide-react';
 
 // Array of 10 images that will rotate every 5 minutes for door 5
 // Place your images in the /public/img/ directory
+const base = import.meta.env.BASE_URL;
 const images = [
-  '/img/image1.png',
-  '/img/image2.png',
-  '/img/image3.png',
-  '/img/image4.png',
-  '/img/image5.png',
+  `${base}img/image1.png`,
+  `${base}img/image2.png`,
+  `${base}img/image3.png`,
+  `${base}img/image4.png`,
+  `${base}img/image5.png`,
 ];
+
 
 // Scrambled order typical for advent calendars
 const displayOrder = [
@@ -115,12 +117,12 @@ export default function App() {
   if (showStartPage) {
     return (
       <div 
-        className="min-h-screen relative flex items-center justify-center overflow-hidden bg-slate-900"
-        style={{
-          backgroundImage: 'url("/img/start-bg.png")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
+  className="min-h-screen relative flex items-center justify-center overflow-hidden bg-slate-900"
+  style={{
+    backgroundImage: `url("${import.meta.env.BASE_URL}img/start-bg.png")`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}
       >
         {/* Dark overlay to make the button stand out more if needed */}
         <div className="absolute inset-0 bg-black/30" />
