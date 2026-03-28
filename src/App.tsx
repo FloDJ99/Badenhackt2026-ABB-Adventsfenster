@@ -87,7 +87,7 @@ export default function App() {
       const timer = setTimeout(() => {
         setSelectedDay(null);
         setShowStartPage(true);
-      }, 60 * 1000); // 1 minute in milliseconds
+      }, 10 * 1000); // 1 minute in milliseconds
       return () => clearTimeout(timer);
     }
   }, [selectedDay]);
