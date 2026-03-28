@@ -62,28 +62,6 @@ const SantaSleigh = () => (
   </div>
 );
 
-// Continuous background music
-  useEffect(() => {
-    const bgMusic = new Audio('/sounds/sound.mp3');
-    bgMusic.loop = true;
-    
-    // Try to play immediately
-    bgMusic.play().catch((error) => {
-      console.log("Autoplay blocked by browser. Waiting for user interaction.", error);
-      // If blocked, wait for the first click anywhere on the page to start playing
-      const playOnInteract = () => {
-        bgMusic.play();
-        document.removeEventListener('click', playOnInteract);
-      };
-      document.addEventListener('click', playOnInteract);
-    });
-
-    return () => {
-      bgMusic.pause();
-      bgMusic.src = '';
-    };
-  }, []);
-
 export default function App() {
   const [showStartPage, setShowStartPage] = useState(true);
   const [selectedDay, setSelectedDay] = useState<number | null>(null);
