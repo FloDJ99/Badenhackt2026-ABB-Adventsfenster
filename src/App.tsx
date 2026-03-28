@@ -81,13 +81,13 @@ export default function App() {
     }
   }, [images.length]);
 
-  // Auto-restart the loop 15 seconds after the door is opened
+  // Auto-restart the loop 20 seconds after the door is opened
   useEffect(() => {
     if (selectedDay === 5) {
       const timer = setTimeout(() => {
         setSelectedDay(null);
         setShowStartPage(true);
-      }, 15 * 1000); 
+      }, 20 * 1000); 
       return () => clearTimeout(timer);
     }
   }, [selectedDay]);
