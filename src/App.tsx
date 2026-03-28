@@ -107,7 +107,7 @@ export default function App() {
     if (!showStartPage && selectedDay === null && animatingDoor === null) {
       const timer = setTimeout(() => {
         handleOpenDoor(5);
-      }, 10000);
+      }, 5000);
       return () => clearTimeout(timer);
     }
   }, [showStartPage, selectedDay, animatingDoor, handleOpenDoor]);
